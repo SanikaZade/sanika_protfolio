@@ -1,0 +1,192 @@
+.aboutSection {
+  /* Keep the next section close to the intro video without changing the site scale. */
+  padding: 56px 0 88px;
+  background: var(--dark-900);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(59,130,246,0.3), transparent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 80px);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Cards, bio, and model each get a stable column. */
+.container {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.78fr) minmax(280px, 1.15fr) minmax(260px, 0.9fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+}
+
+/* LEFT — rectangular stat cards */
+.left {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-self: start;
+  width: 100%;
+}
+
+/* CENTER — bio text */
+.right {
+  min-width: 0;
+}
+
+/* RIGHT — 3D model */
+.modelCol {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modelWrapper {
+  width: min(100%, 340px);
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  background: radial-gradient(ellipse at center, rgba(59,130,246,0.12) 0%, rgba(3,7,18,0) 72%);
+  border: 1px solid rgba(96,165,250,0.14);
+}
+
+/* Subtle glow behind the model */
+.modelWrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(59,130,246,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.modelWrapper :global(canvas) {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.statCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  min-height: 104px;
+  padding: 1.4rem 1.75rem;
+  margin: 0;
+  border-radius: 14px;
+  text-align: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 10px 50px rgba(59, 130, 246, 0.2), inset 0 0 20px rgba(59, 130, 246, 0.05);
+}
+
+.statCard h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  text-align: left !important;
+}
+
+.statCard p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blue-glow);
+  font-weight: 500;
+  text-align: left !important;
+}
+
+.bio {
+  font-family: var(--font-body);
+  line-height: 1.9;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  margin-top: 1.2rem;
+  text-align: left !important;
+}
+
+@media (max-width: 760px) {
+  .container {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+    padding: 0 2rem;
+  }
+
+  .right {
+    grid-column: 2;
+  }
+
+  .modelCol {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .modelWrapper {
+    height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutSection {
+    padding: 48px 0 64px;
+  }
+
+  .heading {
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    padding: 0 1.25rem;
+  }
+
+  .right,
+  .modelCol {
+    grid-column: auto;
+  }
+
+  .modelCol {
+    justify-content: center;
+  }
+
+  .modelWrapper {
+    width: min(100%, 320px);
+    height: 300px;
+  }
+}

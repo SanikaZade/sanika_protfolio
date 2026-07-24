@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;5 00;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue-electric: #3B82F6;
+  --blue-glow: #60A5FA;
+  --blue-deep: #1D4ED8;
+  --teal: #14B8A6;
+  --white: #FFFFFF;
+  --white-80: rgba(255,255,255,0.8);
+  --white-40: rgba(255,255,255,0.4);
+  --white-10: rgba(255,255,255,0.1);
+  --black: #000000;
+  --dark-900: #030712;
+  --dark-800: #0a0f1e;
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark-900);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── GLOBAL SECTION LAYOUT ── */
+section {
+  width: 100%;
+}
+
+.section-inner,
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+/* ── GLOBAL FONT OVERRIDES ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+}
+
+p, span, li, a {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── CENTER ALIGN EVERYWHERE ── */
+section h1,
+section h2,
+section h3,
+section p,
+section span {
+  text-align: center !important;
+}
+
+/* ── GLOBAL SECTION HEADING SIZES ── */
+.eyebrow {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.32em !important;
+  color: #3B82F6 !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: clamp(48px, 7vw, 80px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  margin-bottom: 14px !important;
+  text-align: center !important;
+}
+
+.section-desc {
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  color: rgba(255,255,255,0.45) !important;
+  line-height: 1.7 !important;
+  margin-bottom: 52px !important;
+  text-align: center !important;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue-electric);
+  border-radius: 2px;
+}
+
+::selection {
+  background: rgba(59,130,246,0.3);
+  color: #fff;
+}

@@ -1,8 +1,10 @@
-Hi Welcome to my protfolio
 # Sanika Portfolio
+
 My personal portfolio website — built with Next.js and deployed on Vercel.
 
 **Live site:** [sanika-protfolio.vercel.app](https://sanika-protfolio.vercel.app)
+
+---
 
 ## Tech Stack
 
@@ -14,15 +16,9 @@ My personal portfolio website — built with Next.js and deployed on Vercel.
 | Linting | ESLint (`eslint.config.mjs`, flat config) |
 | Hosting | Vercel |
 
-## Getting Started
+---
 
-Clone and install:
 
-```bash
-git clone https://github.com/SanikaZade/sanika_protfolio.git
-cd sanika_protfolio
-npm install
-npm run dev
 
 ---
 .
@@ -33,7 +29,13 @@ npm run dev
 ├── eslint.config.mjs
 └── tsconfig.json
 
-
-Deployment
 Pushes to main deploy automatically via Vercel. To deploy manually:
 vercel --prod
+
+
+Quick note on this "everything in one file" approach: putting the license inside `README.md` works visually, but GitHub's **License** badge in the sidebar only appears when a separate `LICENSE` file exists at the repo root. Since you already committed that file, you now have two copies of the same text. That's harmless, but if you'd rather keep a single source of truth, replace the inline license with a link instead:
+
+```markdown
+## License
+
+Distributed under the MIT License. 

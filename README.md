@@ -38,4 +38,4 @@ Quick note on this "everything in one file" approach: putting the license inside
 ```markdown
 ## License
 
-Distributed under the MIT License. 
+Distributed under the LICENSE. 

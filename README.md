@@ -35,7 +35,4 @@ vercel --prod
 
 Quick note on this "everything in one file" approach: putting the license inside `README.md` works visually, but GitHub's **License** badge in the sidebar only appears when a separate `LICENSE` file exists at the repo root. Since you already committed that file, you now have two copies of the same text. That's harmless, but if you'd rather keep a single source of truth, replace the inline license with a link instead:
 
-```markdown
-## License
 
-Distributed under the LICENSE. 

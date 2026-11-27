@@ -18,7 +18,6 @@ My personal portfolio website — built with Next.js and deployed on Vercel.
 
 ---
 
-
 ---
 .
 ├── public/          # Static assets (SVGs, images, fonts)

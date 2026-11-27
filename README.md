@@ -16,6 +16,7 @@ My personal portfolio website — built with Next.js and deployed on Vercel.
 | Linting | ESLint (`eslint.config.mjs`, flat config) |
 | Hosting | Vercel |
 
+
 ---
 
 ---
